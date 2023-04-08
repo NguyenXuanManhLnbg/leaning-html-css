@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The band</title>
+    <link rel="icon" href="/assets/img/favicon_io/android-chrome-512x512.png" type="image/x-icon\">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+
+<body>
+    <div id="main">
+        <header id="header">
+
+            <!-- Begin : Nav -->
+
+            <ul class="" id="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#">
+                        More
+                        <!-- tại sao dùng thẻ i vì thẻ i
+                        là thẻ viết chữ in nghiêng nhưng
+                        thẻ i cũng có nghĩa là icon
+                        đặt tên nav-arrow-down cho tiện
+                        sau thay đổi icon -->
+                        <!-- Tạo icon mũi tên xuống của thẻ
+                        More -->
+                        <i class="nav-arrow-down ti-angle-down"></i>
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- End : Nav -->
+
+
+            <!-- Mobile menu button-->
+
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
+
+            <!-- Search button-->
+            <div class="search-btn">
+                <i class="search-icon ti-search"></i>
+            </div>
+
+
+        </header>
+
+        <div id="slider">
+            <div class="text-content">
+                <h2 class="text-heading">New York</h2>
+                <!-- 
+                description là sự miêu tả 1 đoạn mô tả ngắn tóm tắt
+                nội dung của 1 trang web,bài viết, chủ đề,
+                topic... bất cứ 1 vấn đề nào đó. Nói đơn giản,
+                description là câu trả lời cho câu hỏi:
+                Tại sao tôi phải quan tâm?
+             -->
+
+                <div class="text-description">The atmosphere in New York is lorem ipsum.</div>
+            </div>
+        </div>
+
+        <div id="content">
+            <!-- About Section -->
+            <div id="band" class="content-section">
+                <h2 class="section-heading">THE BAND</h2>
+                <p class="section-sub-heading">We love music</p>
+                <p class="about-text">
+                    We have created a fictional band website.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident,
+                    sunt in culpa qui officia deserunt mollit anim id est
+                    laborum consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.
+                </p>
+
+                <!-- 
+                    member-list được hiểu là danh sách
+                    member-item được hiểu là 1 ông
+                    thẻ p member-name là thẻ tên Name
+                    img là thẻ ảnh và tên gợi ý src "/ assets/img/band/member1"
+                    là đường link dẫn ảnh
+                    alt "Name là tên khi mất hình ảnh hiện tên ghi chú"
+                    class tên ảnh member1 là hình ảnh hiển thị
+                 -->
+                <div class="row members-list">
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="/assets/img/band/member1.jpg" alt="Name" class="member-img">
+                    </div>
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name1</p>
+                        <img src="/assets/img/band/member1.jpg" alt="Name1" class="member-img">
+                    </div>
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name2</p>
+                        <img src="/assets/img/band/member1.jpg" alt="Name2" class="member-img">
+                    </div>
+                    <!-- <div class="clear"></div> -->
+                    <!-- do dùng .row::after -->
+                </div>
+            </div>
+
+            <!-- Tour Section -->
+            <div id="tour" class="tour-section">
+                <div class="content-section">
+                    <h2 class="section-heading text-white">TOUR DATES</h2>
+                    <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+
+                    <ul class="tickets-list">
+                        <!-- Bảng số lượng vé còn
+                        quantity là số lượng dùng chỉ số -->
+                        <!-- Phần tử <span> được sử dụng để tô màu một phần của văn bản -->
+                        <li>September <span class="sold-out">Sold out</span></li>
+                        <li>October <span class="sold-out">Sold out</span></li>
+                        <li>November <span class="quantity">3</span></li>
+                    </ul>
+
+                    <!-- Places -->
+
+                    <!-- places-list là danh sách địa điểm -->
+                    <div class="row places-list">
+                        <!-- ở đây place-item chính là 1 địa điểm -->
+                        <div class="col col-third s-col-full mt-16">
+                            <!-- thêm mt-16 để cộng thành 32px trên mỗi class col col-thỉd -->
+                            <!-- img thẻ chứa ảnh và đường link thư mục  -->
+                            <img src="/assets/img/places/place1.jpg" alt="New York" class="place-img">
+                            <!-- thẻ chứa phần thân place-body -->
+                            <div class="place-body">
+                                <!-- có 1 thể chưa đầu đề chữ New York Paris or SanFrancisco
+                                đặt tên là place-heading -->
+                                <h3 class="place-heading">New York</h3>
+                                <!-- tiếp theo là place-time là thời gian địa điểm diễn ra -->
+                                <p class="place-time">Fri 27 Nov 2016</p>
+                                <!-- tiếp theo là thẻ place-desc viết tắt của từ description 
+                                 description là sự miêu tả 1 đoạn mô tả ngắn tóm tắt
+                                nội dung của 1 trang web,bài viết, chủ đề,
+                                topic... bất cứ 1 vấn đề nào đó. Nói đơn giản,
+                                description là câu trả lời cho câu hỏi:
+                                Tại sao tôi phải quan tâm?-->
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
+                                <!-- tiếp theo là nút bấm mua vé sử dụng thẻ a
+                                dấu # để thể hiện đứng im ở thẻ này ko di chuyển
+                                place-buy-btn là nút bấm btn -->
+                                <!-- chuyển class place-buy-btn thành btn dùng chung -->
+                                <a href="#" class="btn s-full-width">Buy Tickets</a>
+                            </div>
+                        </div>
+
+                        <!-- ở đây place-item chính là 1 địa điểm -->
+                        <div class="col col-third s-col-full mt-16">
+                            <!-- img thẻ chứa ảnh và đường link thư mục  -->
+                            <img src="/assets/img/places/place2.jpg" alt="Paris" class="place-img">
+                            <!-- thẻ chứa phần thân place-body -->
+                            <div class="place-body">
+                                <!-- có 1 thể chưa đầu đề chữ New York Paris or SanFrancisco
+                                đặt tên là place-heading -->
+                                <h3 class="place-heading">Paris</h3>
+                                <!-- tiếp theo là place-time là thời gian địa điểm diễn ra -->
+                                <p class="place-time">Sat 28 Nov 2016</p>
+                                <!-- tiếp theo là thẻ place-desc viết tắt của từ description 
+                                 description là sự miêu tả 1 đoạn mô tả ngắn tóm tắt
+                                nội dung của 1 trang web,bài viết, chủ đề,
+                                topic... bất cứ 1 vấn đề nào đó. Nói đơn giản,
+                                description là câu trả lời cho câu hỏi:
+                                Tại sao tôi phải quan tâm?-->
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
+                                <!-- tiếp theo là nút bấm mua vé sử dụng thẻ a
+                                dấu # để thể hiện đứng im ở thẻ này ko di chuyển
+                                place-buy-btn là nút bấm btn -->
+                                <!-- chuyển class place-buy-btn thành btn dùng chung -->
+                                <a href="#" class="btn s-full-width">Buy Tickets</a>
+                            </div>
+                        </div>
+
+                        <!-- ở đây place-item chính là 1 địa điểm -->
+                        <div class="col col-third s-col-full mt-16">
+                            <!-- img thẻ chứa ảnh và đường link thư mục  -->
+                            <img src="/assets/img/places/place3.jpg" alt="SanFrancisco" class="place-img">
+                            <!-- thẻ chứa phần thân place-body -->
+                            <div class="place-body">
+                                <!-- có 1 thể chưa đầu đề chữ New York Paris or SanFrancisco
+                                đặt tên là place-heading -->
+                                <h3 class="place-heading">SanFrancisco</h3>
+                                <!-- tiếp theo là place-time là thời gian địa điểm diễn ra -->
+                                <p class="place-time">Sun 29 Nov 2016</p>
+                                <!-- tiếp theo là thẻ place-desc viết tắt của từ description 
+                                 description là sự miêu tả 1 đoạn mô tả ngắn tóm tắt
+                                nội dung của 1 trang web,bài viết, chủ đề,
+                                topic... bất cứ 1 vấn đề nào đó. Nói đơn giản,
+                                description là câu trả lời cho câu hỏi:
+                                Tại sao tôi phải quan tâm?-->
+                                <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo</p>
+                                <!-- tiếp theo là nút bấm mua vé sử dụng thẻ a
+                                dấu # để thể hiện đứng im ở thẻ này ko di chuyển
+                                place-buy-btn là nút bấm btn -->
+                                <!-- chuyển class place-buy-btn thành btn dùng chung -->
+                                <a href="#" class="btn s-full-width">Buy Tickets</a>
+                            </div>
+                        </div>
+                        <!-- <div class="clear"></div> -->
+                        <!-- do dùng .row::after -->
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Begin: Contact Section -->
+            <div id="contact" class="content-section">
+                <h2 class="section-heading">CONTACT</h2>
+                <p class="section-sub-heading">Fan? Drop a note!</p>
+
+                <div class="row contact-content">
+                    <div class="col col-half s-col-full contact-info">
+                        <!-- Phần chứa thông tin liên hệ thường đặt thêm class 
+                            là contact-info -->
+                        <p><i class="ti-location-pin"></i>Chicago, US</p>
+                        <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
+                        <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
+                    </div>
+                    <div class="col col-half s-col-full contact-form">
+                        <!-- đặt thêm class contact-form -->
+                        <!-- Phần chứa form liên hệ -->
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half s-col-full">
+                                    <!-- Cách đặt tên input người ta đặt là form-control -->
+                                    <!-- đây là khung chữ Name -->
+                                    <input type="text" name="" placeholder="Name" required id="" class="form-control">
+                                    <!-- trong thẻ input thêm required vào để có dòng chữ khi bấm vào 
+                                    Please fill out this field thểm required vào sau Name Email Message-->
+                                </div>
+                                <div class="col col-half s-col-full s-mt-8">
+                                    <!-- thêm s-mt-16 bên mobile reponsive -->
+                                    <!-- đây là khung chữ mail -->
+                                    <input type="email" name="" placeholder="Email" required id="" class="form-control">
+                                    <!-- trong thẻ input thêm required vào để có dòng chữ khi bấm vào 
+                                    Please fill out this field thểm required vào sau Name Email Message-->
+                                </div>
+                                <!-- <div class="clear"></div> -->
+                                <!-- do dùng .row::after -->
+                                <!-- do class ko row ko ôm trọn cả hai dùng clear -->
+                            </div>
+                            <div class="row mt-8">
+                                <!-- mt-8 là khoảng cách hai row khung Name & Email tách
+                                ra khỏi thanh messenge -->
+                                <!--  Đây là khung chữ messenge -->
+                                <div class="col col-full">
+                                    <input type="text" name="" placeholder="Messenge" required id=""
+                                        class="form-control">
+                                    <!-- trong thẻ input thêm required vào để có dòng chữ khi bấm vào 
+                                    Please fill out this field thểm required vào sau Name Email Message-->
+                                </div>
+                            </div>
+                            <!-- Đây là cách tạo ra nút chữ SEND -->
+                            <input class="btn pull-right mt-16 s-full-width" type="submit" value="SEND">
+                            <!--  trên thẻ trình duyệt input type-sumit mặc định sẵn text-aligin bằng center
+                            vì vậy chữ SEND tự căn ra giữa ko phải css như buytickets -->
+                            <!-- thêm class = mt-16 vào thẻ input 
+                            tạo khoảng cách khung thẻ message với chữ SEND -->
+                            <!-- thêm class form-submit-btn vào trước mt-16 đó là nút bấm -->
+                            <!-- xóa class form-sumit-btn đi dùng chung btn -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- End: Contact Section -->
+
+            <div class="map-section">
+                <img src="/assets/img/map.jpg" alt="map">
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="social-list">
+                <a href=""><i class="ti-facebook"></i></a>
+                <a href=""><i class="ti-instagram"></i></a>
+                <a href=""><i class="ti-youtube"></i></a>
+                <a href=""><i class="ti-pinterest"></i></a>
+                <a href=""><i class="ti-twitter"></i></a>
+                <a href=""><i class="ti-linkedin"></i></a>
+            </div>
+            <p class="copyright">Powered by <a href="">w3.css</a></p>
+            <!-- copyright là bản quyền -->
+            <!-- socicals nghĩa là mạng xã hội
+            có thể đặt socicals ko cần list -->
+        </div>
+    </div>
+
+
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+        // vd : header bằng 1 số bất ký lần đầu tiên nó chạy
+        // khi thực hiện click vào mobileMenu 
+        // không nên so sánh sử dụng số trực tiếp xảy ra lỗi
+
+        // Đóng mở mobile menu
+        mobileMenu.onclick = function () {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+
+        //  Tự động đóng khi chọn menu
+
+        var menuItems = document.querySelectorAll('#nav  li  a[href*="#"]');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+
+            // chú ý menuItem ko có chữ s sau vế trc và sau
+            // header.style.height = null; là đoạn code ẩn đi
+
+            //  Khi ấn vào thanh home band tuor tự động đến và ẩn đi
+            menuItem.onclick = function (event) {
+                // khi bạn onclick nó trả về 1 event sự kiện nào đó
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                // Khi click vào 1 thẻ lấy chính cái thẻ chúng ta click vào kiểm tra cái anh em liền kề của nó và ktra anh em liền kề của nó có class subnav hay ko
+                //  Nếu không phải isPerentMenu thì ẩn đi 
+                // đoạn code header.style.height là đoạn ẩn đi
+                // lưu ý phải để đoạn code var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav') để trong onclick
+                //  dấu chấm than !isParentMenu là phủ định ngược lại là không
+                if (isParentMenu) {
+                    event.preventDefault();
+                    // nếu đúng là isParentMenu thì bỏ đi hành vi mặc định
+                    // prevent default có nghĩa là ngăn cả hoặc là bỏ qua cái mặc định của thẻ a tới 
+                    // trong javascript thì không có else thì viết phủ định !isParentMenu có thì bỏ ! đảo ngược lại
+                } else {
+                    header.style.height = null;
+                    // Nếu ko phải isParentMenu thì ẩn menu 
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

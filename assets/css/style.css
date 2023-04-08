@@ -1,0 +1,943 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* 
+    sử dụng font chữ có sãn trên pc thuộc chủng ko chân
+    ở văn bản.
+    */
+    font-family: Arial, Helvetica, sans-serif;
+    /* scroll là hành động cuộn  behavior là hành động
+    scroll-behavior là hành động cuộn */
+    scroll-behavior: smooth;
+}
+/* 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Từ tổng quan đến chi tiết
+*/
+
+/* 
+1. Vị trí
+2. Kích Thước
+3. Màu Sắc
+4. Kiểu Dáng ( hình dang, hình tròn , hình vuông ... )
+ */
+
+ /* Common Nghĩa là Class Dùng Chung */
+ /* Khi dùng nhiều class nhớ dùng cách nhau mỗi class là 1 dâu cách */
+
+ .row {
+    /* row gọi là hàm */
+    /* Do trong 1 trang web có nhiều class giống nhau và sử
+    dụng chung class nên đặt theo để giảm bớt nhiều class ko
+    cần thiết */
+    margin-left: -8px;
+    margin-right: -8px;
+ }
+
+ .row::after {
+    /* sử dụng element giả thay thế cho clear */
+    content: " ";
+    display: block;
+    /* muốn cho clear :both thì bắt buộc display: block */
+    clear: both;
+    /* nó sẽ thay thẻ div class clear */
+ }
+
+ .col {
+    /* column viết tắt col nghĩa là cái cột */
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+ }
+
+ .col-half {
+    /* trong 1 trang wed thì thường chia ra từ 1-4 cột
+    nên sử dụng chung các class chung để dễ dàng quản lý hơn */
+    /* col-half sử dụng cho 1 nửa khung */
+    width: 50%;
+ }
+
+ .col-full {
+    /* col-full dùng cho cả khung */
+    width: 100%;
+ }
+ .col-third {
+    /* để chia cột trong css thì col-third chia làm 3 cột
+    nên thay thế place-item */
+    width: 33.33333%;
+ }
+
+.mt-8 {
+    /* mt viết tắt của margin-top  */
+    /* khoảng cách khung chữ Name và email với massage 
+    lưu ý những con số chia hết cho 4*/
+    margin-top: 8px !important;
+}
+.mt-16 {
+    /* mt viết tắt của margin-top  */
+    /* khoảng cách chữ messege và chữ send 
+    lưu ý những con số chia hết cho 4*/
+    margin-top: 16px !important;
+}
+
+.mt-32 {
+    margin-top: 32px !important;
+}
+
+.clear {
+    /* khi sử dụng float thì cái thẻ members-list sẽ ko ôm 3 thẻ  con
+    member-item đây là vấn đề khi sử dụng float
+    khi thẻ con sử dụng float thì thẻ cha bên ngoài nó sẽ bị co lại
+    có thể thêm vào #content .members-list thuộc tính overflow:hidden
+    khắc phục tình trạng này hoặc đặt 1 thẻ div class "clear" bên dười thẻ 
+    <div class = "members-list">
+    ...
+    <div class = "clear"></div> */
+    clear: both;
+}
+
+.text-white {
+    /*  Nghĩa là sau này trong mọi đoạn text nào có màu khác màu thì chỉ cần
+    thêm chữ text-white cho cái thẻ đó vào thì đều có chữ màu trắng
+    ! important là độ ưu tiên cao*/
+    color: #fff !important;
+}
+
+.text-center {
+    /* do bỏ hẳn member-item để sử dụng thuộc tính text-center
+    chung  */
+    text-align: center !important;
+}
+
+.pull-right {
+    /* pull là kéo right là phải >> kéo sang phải */
+    /* do kéo nút SEND sang phải ta thêm 1 class chung dùng cho 
+    khi nào cần kéo sang phải */
+    float: right!important;
+}
+
+.btn {
+    /* nút chữ buy button có chữ màu trắng color:#fff
+    màu nền của nút là màu đen background-color :#000
+    bỏ gạch chân của chữ buy tickets sử dụng text-dicoration:none;
+    chỉnh cho nó đúng kích thước mẫu 
+    padding: 11px 16px
+    do nó đang là thẻ inline đứng dưới thẻ block thẻ place-desc
+    tính chất thẻ inline khi được padding lên thì khoảng padding 
+    của nó sẽ không được va chạm với thẻ bên trên nó 
+    cách sử lý cho nó bằng display:inline-block */
+    /* khoảng cách nút với place-desc là 15px sử dụng
+    margin-top :15px*/
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    /* do dùng chung thẻ nên nút buy ticket có tính chất thẻ a
+    thẻ SEND có tính chất thẻ input. Nút Buyticket ko có border
+    nút SEND có border và có input type nên bỏ border :none */
+    border: none;
+    /* thêm text align center trên mobile cho chữ buy-tickets ra giữa */
+    text-align: center;
+}
+
+.btn:hover {
+    /* khi hover tức khi chỉ vào nút thì có màu đen nghĩa 
+    là màu chữ của nó thành màu đen và màu nền màu # ccc và sử dụng
+    color : #000  sau đó có cái background-color:#ccc */
+    /* khi chuyển thẻ chung thì cái chữ send ko có pointer hình bàn
+    tay còn buyticket mặc định có do đó ta thêm cusor:pointer */
+    cursor: pointer;
+    color: #000;
+    background-color: #ccc;
+}
+
+
+
+
+/* Main */
+
+#main {
+
+}
+
+#header {
+    /* 
+    Để thanh header bám dính sát lên trên đầu trang sử dụng thuộc tính
+    position :fixed;
+    top: 0;
+    left: 0;
+    right: 0;   
+    */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    background-color: #000;
+    /* dùng z-index để thanh header nổi lên trên khung slider
+    và tăng giá trị lên ko 1 mà ko được */
+    z-index: 1;
+    /* vì thẻ div có thuộc tính overflow :visible mặc định
+    nên khi muốn thẻ con ul của thanh header ẩn đi ta thêm
+    vào overflow :hidden nó sẽ tự động thu gọn lại vào chữ Home*/
+    /* overflow: hidden; */
+    /* Do ở PC không cần overflow nên bỏ đi ko hiển được thẻ con more
+    nhưng mobile lại cần ta chuyển sang responsive */
+}
+
+#nav {
+    /* mất tính kế thừa của thằng block đi
+    và thẻ ul có tính chất kế thừa hết chiều ngang 
+    giờ cho ông ul nó nội dung đến đâu thì dài đến đó thôi
+    có nghĩa là từ chữ Home cho đến chữ More 
+    chỉ cần sửa display:inline-block là ngắn lại */
+    display: inline-block;
+}
+#nav, .subnav { 
+    /* xử lý thẻ dấu chấm mặc định của thẻ <li> */
+    list-style-type: none;
+}
+
+#nav > li {
+    /* 
+    cách 3 để thẻ a cấp 2 con của #subnav li full viền màu #ccc
+    */
+    display: inline-block;
+}
+
+#nav li {
+    /* 
+    Tính chất thẻ li là display - item 
+    luôn nằm trên 1 dòng mới vì vậy sử dụng
+    display-inline-bock để cho làm trên cùng 1 hàng
+    trên thẻ header
+    */
+    
+    position: relative;
+}
+
+#nav > li > a {
+    /* 
+    lấy thẻ con trực tiếp thẻ a là con của thẻ li và li
+    là con của thẻ #nav của thẻ cấp 1 ko ảnh hưởng tới thẻ
+    con li và a của thẻ cấp 2
+    */
+    /* 
+    xử lý chữ in hoa của thẻ cấp 1
+    text-transform:uppercase
+    */
+    color: #fff;
+    text-transform: uppercase;
+
+}
+
+#nav li a {
+    /* 
+    từ thẻ nav đi đến thẻ li rồi đến thẻ a
+    thẻ <a> chứa chữ đổi màu chữ thành màu gì tùy biến
+    sử dụng color để đổi màu
+     */
+    /* 
+    mặc định của hệ thống sử dụng text-decoration: Underline
+    Underline có nghĩa là gạch chân muốn xóa gạch chân đi thì 
+    chuyển thuộc tính text-decoration về none.
+    */
+    /* 
+    có nhiều cách căn chỉnh chiều cao 
+    ở đây sử dụng line-height bằng chính chiều cao thẻ
+    header để căn dòng thẻ li và  a vào giữa thanh header
+    khi bôi đen chữ đó là line-height và line height chỉ 
+    dùng cho chữ.
+    */
+    /* 
+    xem tang mẫu web > bật F12 lên dùng con trỏ chuột
+    soi xem khoảng cách từng chữ là bao nhiều
+    phần padding là bao nhiêu. Việc padding trên dưới 12 12
+    chúng ta ko cần làm theo vì có nhiều cách để làm
+    chúng ta dùng line height rồi nên chúng ta ko cần padding
+    lên trên dưới, Chúng ta chỉ cần sang trái phải cho khoảng cách
+    xa nhau ra là được
+    */
+
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    /* 
+    sửa inline- block thành block và thêm thẻ #nav > li {
+        display: inline-block; }
+
+        Bởi vì tính chất block chỉ kế thừa bề ngang thẻ chứa nó
+        thẻ li cũng ko hết
+        soi ở thẻ cấp 2 #subnav
+    */
+    display: block;
+}
+
+
+#nav li:hover .subnav {
+    /* 
+    chúng ta đặt câu hỏi tư duy chút di vào đâu và hiện cái gì?
+    di vào thẻ <li> hiện cái thẻ <ul> con của nó
+    di vào thẻ <li> chữ MORE hiện cái Ul con của nó 
+
+    */
+    display: block;
+}
+
+
+#nav > li:hover > a,
+#nav .subnav > li:hover > a {
+    /* 
+    thêm dấu > vào giữa thẻ #nav > li:hover > a 
+    để nó chỉ tác động lên thẻ li và thẻ a ở cấp 1 thôi
+    nhưng cấp 2 lại không có ta lại css cho thẻ cấp 2 >>>
+    khi hai thuộc tính giống nhau ta có thể viết chung
+    lại đoạn code viết gộp vào. Các selector cách nhau bởi
+    dấu phẩy ( , )
+    */
+
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    /* 
+    dùng display:none ẩn tạm thời thẻ cấp 2 
+    */
+    /* 
+    làm thẻ more đầu tiên cho nó hiện hết thẻ cấp 2 lên đã
+    */
+    /* 
+    đầu tiên thẻ cha là thẻ #nav li : cho thuộc tính
+    position:relative
+    kế tiếp thẻ con là #nav .subnav thuộc tính 
+    position: absolute
+    */
+    /* 
+    màu nền  của thẻ con subnav màu trắng sử dụng
+    background #fff
+    */
+    /* 
+    - quanh cái thẻ con có màu trắng nó có viền gọi là bóng đổ
+    box-shadow: 0 0 10px nó màu đen mờ mình dùng hàm 
+    rgba(0 , 0 , 0, 0.3)
+    */
+
+    /* 
+    sau khi làm xong các bước muốn thẻ More ẩn đi dùng 
+    display:none;
+    */
+    display: none;
+    min-width: 160px;
+    /* 
+    min-width:160px đo ở thẻ con sau này content dài ra vẫn dài ra
+    */
+    position: absolute;
+
+    /* 
+    fzĐể chắc chắn nó sẽ luôn nằm ở đấy nên luôn luôn dùng top:100% và
+    left : 0
+    */
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+#nav .subnav a {
+    /* 
+    tách riêng màu chữ a là thẻ con của subnav 
+    màu chữ của thẻ cấp 2 là màu đen sử dụng
+    color : #000
+    */
+    /* 
+    quan sát phần viền của thẻ more dày hơn thẻ con cấp 2
+    thêm padding : 0 12px
+    sử dụng nguyên tắc 4px tạo khoảng cách đẹp
+    - Thẻ More và thẻ con merchandise dày bằng nhau 
+    trong khi thẻ con mỏng hơn, do thuộc tính line-height
+    cho thẻ a cấp con #subnav li a line-height :38px
+    
+    */
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#nav .nav-arrow-down {
+    /* 
+    mặc định font-size là 16px
+    font size của icon mũi tên chỉ xuống more
+    */
+    font-size: 14px;
+}
+
+#header .mobile-menu-btn {
+    /* Khi thêm thuộc tính bên responsive của riêng mobile
+    display : block nhưng cái nút menu bay di chỗ khác nên
+    ta sử dụng thuộc tính position mà thẻ cha header có dùng
+    position :flex vì vậy ta thêm vào thẻ mobile-menu-btn thuộc tính
+    position:absolute và cho top dính sát và dính về phía bên
+    phải của thẻ cha */
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* do chưa ẩn nút tìm kiếm đi nên nó có lỗi */
+    display: none;
+}
+#header .mobile-menu-btn,
+#header .search-btn {
+    /* 
+    do ông search-btn vẫn là thẻ div nên mặc định ông ấy có tính chất kế 
+    thừa chiều ngang nên ông đang chiếm 100% thẻ cha nên ko chui lên được
+    muốn đẩy nút search sang bên phải màn hình thì dùng thuốc tính
+    float:right, Khi 1 thẻ div có tính chất khối là kế thừa chiều ngang đi nữa
+    mà bị thêm thuộc tính foat vào thì nó cũng sẽ mất tính kế thừa chiều ngang 
+    của nó
+    */
+    /* 
+    do nó chưa nằm nữa thẻ nên sử dụng padding để căn chỉnh
+    padding:0 21px */
+    /* 
+    Trong làm lập trình website cứ cái gì người dùng bấm click được thì
+    phải đổi thành bàn tay, bình thường ko click được mới thành hình arrow
+    thêm thuộc tính cursor :pointer vào thì khi di chuyển đến nút search sẽ hiện bàn tay
+    pointer là bàn tay.
+    lý do tại sao di vào mà ko cần cho vào hover là vì nó nằm ở thuộc tính
+    search-btn thì cứ di chuột vào element đó thì nó sẽ thành cursor :pointer thôi
+    */
+    float: right;
+    padding: 0 21px;
+    
+}
+
+#header .mobile-menu-btn:hover {
+     background-color: #ccc;
+}
+
+
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
+}
+
+
+#header .search-btn:hover {
+    /* 
+    Đổi màu cái nút search batton 
+    */
+    /* 
+    khi search-btn bt ko có class hover giả dụ ko cần đổi background
+    mà bạn muốn có hình cursor :pointer thì thêm vào cái class thuộc tính hiện tại
+    đừng mất công tạo 1 cái hover thừa
+    trong trường hợp này có sẵn hover này thì hay thêm vào hover 
+    lí do là vì nó rõ ngữ và nghĩa hơn
+    hover là di chuột lên thì chuột sẽ thành cursor : pointer và
+    background sẽ đỏ lên
+    cách tư duy nó sẽ dễ hiểu hơn
+    */
+    cursor: pointer;
+    background-color: #f44336
+}
+#header .menu-icon,
+#header .search-icon {
+    /* 
+    chỉnh line-height để nút search vào giữa thanh header
+    
+    */
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
+}
+#slider {
+    /*
+     thêm thuộc tính position :absolute vào thẻ con 
+     #slider .text-content thì 
+    khi đó thẻ con có thuộc tính absolute được nhấc lên
+    cao lên hơn 1 layer 1 lớp so với ảnh
+    */
+    position: relative;
+    /* 
+    min-height chiều cao tối thiểu
+    dùng làm tạm thời cho tối màu
+    */
+    /* min-height: 500px; */
+    /* background-color: #333; */
+    /* 
+    khi ta line-height thanh header,
+     thanh slider nổi trên cả thanh header
+    đáng nhẽ nó phải nổi dưới mép của thanh header xuống dưới
+    khi thanh header thêm thuộc tính position:fixed nó nổi lên ở tầng cao
+    hơn vì vậy nó nhường vị trí ban đầu nó đứng cho thằng slider vì vậy
+    header đang đè lên thanh slider. nên ta có thể thêm thuộc tính
+    margin-top bằng chính chiều cao của thanh header bằng 46.5px
+    */
+    margin-top: 46px;
+    /* 
+    Sử dụng padding-top :50% là để khi co kéo ảnh ko bị 
+    biến dạng khi phóng to thu
+     nhỏ ko đồng đều. khi padding-top có giá 
+    trị value là % thì cái % này là cái % chiều ngang của
+    chính nó.
+    */
+    padding-top: 50%;
+    /* 
+    /assets/img/slider/slider1.jpg trong css dấu / thể hiện sau domain gốc
+    của chúng ta vd 127.0.0.1:5500//assets/img/slider/slider1.jpg
+    kiểu viết shorthand này cần lưu ý rằng sau url cần đến vị trí có ảnh
+    thì chúng ta cứ mặc định là nó lấy top ( sát vào bên trên ảnh ) lấy center
+    là để căn vào giữa ảnh sau đó có muốn lấy size là cover và no-repeat ko lặp
+    lại ảnh dưới cùng. 
+    - Phần url là phần backgroud-image
+    - Phần top center là background position
+    - và sau dấu gạch chéo là backgroud-size
+    - và no-repeat đại diện cho backgroud repeat
+    */
+    /*backgroud là cách làm font-end kỹ thuật cao hơn so với
+    dùng thẻ img*/
+    background: url('../img/slider/slider1.jpg') top center / cover no-repeat;
+    /* Sử dụng dấu ./ là thể hiện nó đứng ngang hàng
+    sử dụng ../ hai dấu chấm là nó nhảy ra ngoài nó sẽ đứng ngàng hàng với img nên bỏ asset đi */
+}
+
+#slider .text-content {
+    /* 
+    Cho chữ New York lên tranh #slider đầu tiên dùng lệnh
+    bottom :0; nó tự đúng vào khung slider góc trái image
+    color :#fff; màu chữ New York dòng chữ dưới màu trắng
+    */
+    position: absolute;
+    /* Sửa bottom thành 47px phù hợp với mẫu */
+    bottom: 47px;
+    color: #fff;
+    /* Căn giữa có 3 cách sử dụng width hoặc left và transfrom */
+    width: 100%;
+    /* Cách 2
+    left: 50%; 
+    transform: translateX(-50%);
+    */
+    /* 
+    cách 3 ! cách nhanh nhất viết ít nhất áp dụng
+    right:0;
+    left:0;
+    không khác gì width bằng 100% cả.
+    Biết nhiều cách để tùy cơ ứng biến
+    */
+    /* 
+    Text-align:center;  để cho thanh chữ New York nằm vào giữa
+    */
+    text-align: center;
+}
+
+#slider .text-heading {
+    /* 
+    Đầu tiên thằng h2 thẻ chữ New York đang dày hơn cho nó nhỏ lại
+    giá trị của font-weight : giao động từ 100-700
+    */
+    font-weight: 500;
+    /* size chữ của chữ New York là 24 */
+    font-size: 24px;
+}
+
+#slider .text-description {
+    /* size chữ của dòng chữ The atmosphere in New York is lorem ipsum là 15px  */
+    font-size: 15px;
+    margin-top: 25px;
+    /* text-shadow là bóng đổ của đoạn chữ */
+    text-shadow: 0 0 1px #000;
+}
+
+
+#content {
+
+}
+
+#content .content-section {
+    width: 800px;
+    max-width: 100%;
+    padding: 64px 0 112px;
+    /* thêm giá trị 112px vào để thêm khoảng cách của class
+    places-list margin-bottom:48px và 112 là công với 64px
+    là từ đó ra 112px*/
+    /* 
+    trên dưới bằng 64px trái phải bằng 0
+    */
+    /* 
+    Căn chữ ra giữa sử dụng 2 thuộc tính margin left và right bằng : auto
+    */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#content .section-heading {
+    /* 
+    riêng heading font size kích thước khác nhau copy ra riêng 
+    font-size:30px
+    */
+    /* Chữ THE BAND cần cho mỏng đi dùng font weight */
+    /* Chữ THE BAND khoảng cách các chữ gần nhau quá sử dụng
+    letter-spacing: 4px; thêm vào Heading thôi
+    letter : nghĩa là từng chữ
+    spacing: nghĩa là khoảng cách
+    */
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    /* khoảng cách thẻ p chữ we love music là 25px
+    thêm vào là margin-top:25px */
+    /* size chữ là 15px */
+    /* font-style:italic kiểu phong cách chữ của nó là chữ nghiêng */
+    /* sử dụng Opacity là độ mờ độ trong suốt hoặc cách 2 là đổi màu khác
+    ở đây ta dùng opacity giá trị opacity là từ 0 đến 1*/
+    font-size: 15px;
+    margin-top: 25px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#content .about-text {
+    /* khoảng cách thẻ p dòng chữ we have ... consequat
+    cũng bằng thẻ p trên we love music vì vậy thêm 
+    margin-top :25px */
+    /* font-siz chữ của thẻ p cũng là 15px */
+    /* text của các dòng chữ bị lệch ko thẳng hàng từ trên xuống
+    dưới sử dụng thuộc tính text-align :justify; để căn đều hai bên cạnh */
+    /* Do các dòng chữ của mình đang gần nhau quá nên sử dụng thuộc tính
+    line-height để cẳn chỉnh thường thi tiếng anh là dùng 1.4 và tiếng việt 1.6
+    line : nghìa là đường hiểu là đường hàng ngang
+    height: nghĩa là chiều cao
+    thuộc tính line-height là chỉnh cái chiều cao của 1 dòng thường sử dụng với chữ
+    nó sẽ nâng được khoảng cách hai dòng cách xa nhau ra  */
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .section-heading,
+#content .section-sub-heading {
+    /* 
+    để di chuyển chữ chung của hai thẻ ta sử dụng
+    text-align :center
+    */
+    text-align: center;
+}
+
+#content .members-list {
+    /* Khoảng cách từ about-text đến members-list là 48px
+    vì vậy ta sử dụng margin-top : 48px và sau khi sửa trên mobile
+    thì ta thêm mt-16 vào 48-16 */
+     margin-top: 32px;
+}
+
+/* #content .member-item { */
+    /* sử dụng float:left:  để kéo cả 3 ông lên 1 hàng */
+    /* float: left; */
+    /* do có class col và col-third nên thay thế vào */
+    /* có nhiều cách để làm 3 ông member-item giãn tách đều ra khỏi nhau 
+    sử dựng width:33.33333%; hoặc dùng hàm để chia width :(calc (100% / 3);
+    chọn cách nhanh ngắn gọn nhất chứ phức tạp hóa vấn đề
+     tính toán nhiều nguy hiểm*/
+    /* width: 33.33333%; */
+    /* do có class col và col-third nên thay thế vào */
+    /* text-align: center; căn ảnh và chữ của hai thẻ con #member-name và 
+    vả member-img */
+    /* text-align: center; */
+    /* do text-align:center dùng chung class text-center
+    để css chung vào đó nên class member-item xóa bỏ */
+/* } */
+
+#content .member-name {
+    /* kích thước chữ Name là 15 px sử dụng font-sizre:15px
+    text-align:center cho chữ Name ra giữa */
+    font-size: 15px;
+    /* text-align: center; nhấc lên #content .member-item để nó căn cả ảnh và chữ */
+}
+
+#content .member-img {
+    /* ảnh cách ra cái chữ Name là 15px sử dụng thuộc tính css
+    margin-top:15px */
+    margin-top: 15px;
+    /* ảnh là 154px vì vậy sử dụng width:154px */
+    width: 154px;
+    /* ảnh nó bo góc tròn lại sử dựng thuộc tính border-radius :5px */
+    border-radius: 5px;
+}
+
+/* Tour Section */
+.tour-section {
+    background-color: #000;
+}
+.tickets-list {
+    /* thẻ ul tickets-list màu trắng nên thêm thuộc tính backgroud
+    color chuyển thành màu trắng */
+    background-color: #fff;
+    /* khoảng cách giữa chữ remember to book your tickets và thẻ
+    stickets-list là 40px sử dụng thuộc tính margin-top */
+    margin-top: 40px;
+    /* do còn dấu chấm của thẻ li september, october, november nên
+    sử dụng thẻ list-stype:none */
+    list-style: none;
+}
+
+.tickets-list li {
+    /* màu chữ của thẻ li là 757575 dùng color */
+    color: #757575;
+    /* size chữ là 15px từ chữ september */
+    font-size: 15px;
+    /* trên dưới 11px trái phải 16px */
+    padding: 11px 16px;
+    /* thuộc tính border-bottom có thuộc tính solid gạch chân có 
+    kiểu viền là solid đường viền liền */
+    border-bottom: 1px solid #ddd;
+}
+.tickets-list .sold-out {
+    /* màu background-color là màu #f44336 */
+    background-color: #f44336;
+    /* màu chữ trong sold-out là màu trắng #fff dùng color đổi
+    màu chữ */
+    color: #fff;
+    /* khung màu backgroud có kích thước chỉnh padding để chỉnh
+    kích thước khung */
+    padding: 3px 4px;
+
+}
+
+.tickets-list .quantity {
+    /* do số 3 đang ở bên trái màn hình khi chuyển qua bên phải
+    sử dụng thuộc tính float :right: để di chuyển qua */
+    float: right;
+    /* chiều rộng của chữ là 24 px */
+    width: 24px;
+    /* chiều cao 24px */
+    height: 24px;
+    /* màu sắc khung của số 3 là màu đen backgroud color : #000 */
+    background-color: #000;
+    /* chữ màu trắng color: #fff */
+    color: #fff;
+    /* hình tròn border-radius bằng 50% */
+    border-radius: 50%;
+    /* chữ căn giữa từ trái qua phải theo chiều ngang
+     là dùng text-align:center */
+    text-align: center;
+    /* căn chữ từ trên xuống dưới bằng line-height bằng với 
+    kích thước chữ là 24px để căn giữa */
+    line-height: 24px;
+    /* khi xem F12 ta thấy nó vẫn bị lệch xuống dưới 
+    sử dụng trường hợp này sử dụng margin-top:-3px
+    vì có thuộc tính float nên mới sử dụng được margin-top âm */
+    margin-top: -3px;
+
+}
+/* Places */
+.places-list {
+    /* khoảng cách từ tuor là 32px sử dụng margin-top
+    đổi sang mobile nên sửa margin-top từ 32 xuống 16px */
+    margin-top: 16px;
+    /* vào soi ta thấy ông places-list đang ko bao ôm các ông
+    place-item ta lại sử dụng kĩ thuật clear thêm class vào */
+    /* do các thẻ ảnh New York và SanFrancisco chưa đúng ta 
+    sử dụng margin âm trái và phải  margin-left: -8px;
+    margin-right: -8px;
+    Có thể viết tổng hợp lại cho ngắn
+    margin: 32 -8 0; nghĩa là top bằng 32px trái phải -8px
+    dưới chưa có để tạm là  0px */
+    
+    /* margin-left: -8px; */
+    /* margin-right: -8px; */
+    /* Do đặt hàm row ngắn rút gọn đi nên margin đc đưa lên
+    class row chung */
+    
+    /* Do phần màu đen cuối dài hơn nên khi đo là đc 32px
+    ta dùng padding-bottom:32px có khoảng xanh blue là 16px 
+    cộng thêm vào là 48px */
+    /* trong trường hợp viết ngắn rút gọn lại thì có thể sử dụng
+    margin-top : -32px -8px 48px; cũng đc đây là mình làm đọc
+    cho hiểu nên sẽ viết lại đủ theo từng bước */
+    /* padding-bottom: 48px; 
+    có thể để padding trong trường hợp này*/
+    /* lưu ý khi dùng row ko ghi lại tránh trường hợp bị ghi đè lên */
+    /* margin-bottom: 48px; */
+    /* bỏ đi vì sai xóa để thêm vào class chung đến content-section */
+}
+
+/* .place-item { */
+    /* do thay thế col-third width chung 33.33333% nên class
+    bị thay đổi xóa bỏ */
+    /* do 3 cái thẻ ảnh ko đều do kích thước ảnh to hơn thẻ
+    chứa nó nên thẻ div place-item phình ra theo hình ảnh này
+    giờ bạn muốn đặt chiều ngang của các cái place-item trên 1
+    dòng thì bạn đặt cái width : 33.33333%  
+    nhưng tính chất của hình ảnh nó ko co lại theo thẻ cha của nó
+    vì ảnh nó có kích thước to hơn cả thẻ chứa nó
+    giải quyết vấn đề này thì ta sử dụng width : 100% cho thẻ img
+    thì nó sẽ bằng kích thước của thẻ chứa nó thì nó sẽ ko bị vượt
+    quá nữa*/
+    /* float: left; */
+    /* xóa đi vi đã tách lên row */
+    /* width: 33.33333%; */
+    /* những thẻ div bên này có khoảng cách giữa khi padding vào thì
+    thì ảnh New York phải padding sang phải mà ảnh Paris padding sang
+    cả hai bên và ảnh SanFrancisco lại padding sang bên trái ko padding
+    bên phải, ta coi khoảng cách các ảnh là 16px mỗi ảnh 1 hướng là 8px
+    trc tiên ghi padding : 0 8 px " top bằng 0 trái phải bằng 8px " */
+    /* padding: 0 8px; */
+    /* xóa đi vì đã tách lên */
+/* } */
+
+.place-img {
+    /* vì ảnh nó có kích thước to hơn cả thẻ chứa nó
+    giải quyết vấn đề này thì ta sử dụng width : 100% cho thẻ img
+    thì nó sẽ bằng kích thước của thẻ chứa nó thì nó sẽ ko bị vượt
+    quá nữa */
+    width: 100%;
+    /* do thẻ img nó màu đen giữa hai khối pleace-img và pleace-boy
+    do thẻ img có tính chất display:inline nên nó tạo ra khoảng
+    cách vệt đen đó. Do đó bạn sử nó thành block nó sẽ ko còn tạo
+    ra cái khoảng cách đó nữa  */
+    display: block;
+}
+
+.place-img:hover {
+    /*khi di chuyển đến ảnh có lớp mờ mờ trên anh đó là opacity */
+    opacity: 0.6;
+}
+.place-body {
+    /* Màu nền của phần place-body đang tối chuyển sang màu trắng
+    sử dụng backgroud-color :#fff */
+    background-color: #fff;
+    /* nhìn vào các phần thẻ ảnh img này nó ngang với phần màu
+    đen chứng tỏ nó padding sang 4 hướng là 16px do đó sử dụng
+    padding:16px */
+    padding: 16px;
+    /* tất cả chữ trong thẻ body thẻ cha bằng 15px dùng font-size:15px
+    lí do là font-size có tính kế thừa */
+    font-size: 15px;
+}
+
+.place-heading {
+    /* do thẻ h3 có tính chất riêng của nó nên ta css riêng cho nó thẻ
+    font-size :15px và Chữ nó mỏng hơn dùng font-weithe :550; */
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.place-time {
+    /* khoảng cách của thanh tiêu đề heading và thời gian địa điểm
+    cách nhau là 15px ta sử dụng margin-top:15px */
+    margin-top: 15px;
+    /* màu chữ cửa thời gian địa diểm là #757575 sử dụng
+    color :#757575 hoặc có thể dùng opacity :0.6 */
+    color: #757575;
+}
+
+.place-desc {
+    /* khoảng cách của thẻ thời gian và địa điểm với thẻ desc là 15px
+    nên ta sử dụng margin-top :15px */
+    margin-top: 15px;
+    /* khoảng cách line-height hơi hẹp chút ta sử dụng mở rộng ra hơn 
+    tiếng việt là 1.6 và tiếng anh 1.4 đó là khoảng cách line-height*/
+    line-height: 1.4;
+}
+
+/* Contact from */
+.contact-content {
+    /* Khoảng cách chữ fan? Drop a note là 48px */
+    margin-top: 48px;
+}
+
+.contact-info {
+    /* Chứa thông tin liên hệ là size chữ là 18px */
+    font-size: 18px;
+    /* do cái line-height của mình vẫn còn gần nhau
+    chữ chicago... email */
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+    /* trong thẻ i có chứa cái class chứa chữ ti- */
+    /* chỉnh các icon có khoảng cách giống với web cho sẵn là 30px */
+    width: 30px;
+    /* do display:inline nên ko đặt đc width nên thêm display: inline-block */
+    display: inline-block;
+}
+
+
+.contact-form {
+    /* size ô chữ bên Name Email Messege là 15px */
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    /* khung Name Email Message bên bài mẫu có border như kia  */
+    border: 1px solid #ccc;
+    /* width bằng 100% là do chữ name và email có khoảng hở
+    là 16px để nó căn vào giữa */
+    width: 100%;
+}
+
+/* .contact-form .form-submit-btn { */
+    /* màu bao chữ send là blackgroud */
+    /* background-color: #000; */
+    /* màu chữ */
+    /* color: #fff; */
+    /* kích thước viền dùng border */
+    /* border: 1px solid #000; */
+    /* kích thước nút trên dưới trái phải dùng padding */
+    /* padding: 10px 16px; */
+    /* cho nút sang phải dùng float right */
+    /* float: right; */
+    /* outline là màu viền khung bên ngoài của các chữ */
+    /* outline: none ; */
+    /* class này đã đc xóa bỏ vì dùng chung với btn nút trên */
+    
+    /* Map section */
+    .map-section img {
+        /* thẻ div có tính kế thừa nên css vào thẻ img để co kéo ảnh */
+        width: 100%;
+    }
+
+    
+/* Footer Section */
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list {
+    font-size: 24px;
+}
+
+#footer .social-list a {
+    /* màu sắc icon làm mờ đi */
+    color: rgba(0, 0, 0, 0.4);
+    /* kiểu chữ là gạch chân nên bỏ gạch đi dùng text-dicoration:none */
+    text-decoration: none;
+}
+
+#footer .copyright a:hover,
+#footer .social-list a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copyright {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a {
+    color: rgba(0, 0, 0, 0.6);
+}
